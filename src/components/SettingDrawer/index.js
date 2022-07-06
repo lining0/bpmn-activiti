@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
 import {Select, message, Drawer, List, Switch, Divider, Icon, Button, Alert, Tooltip} from 'antd';
-import {formatMessage} from 'umi/locale';
+import {formatMessage} from 'umi';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {connect} from 'dva';
+import {connect} from 'umi';
 import omit from 'omit.js';
 import styles from './index.less';
 import ThemeColor from './ThemeColor';

@@ -6,8 +6,8 @@
  * @Description: 基础设置 -> 流程管理 -> 流程设计
  */
 import React, {Component} from 'react';
-import {connect} from 'dva';
-import router from 'umi/router';
+import {connect} from 'umi';
+import {history} from 'umi';
 import {Card, Form, Button, notification} from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import FooterToolbar from '@/components/FooterToolbar';
@@ -256,7 +256,7 @@ class ProcessDesign extends Component {
 
     // 返回列表
     handleBack() {
-        router.push('/bpmn/processManage');
+        history.push('/bpmn/processManage');
     }
 
     // 关闭流程图弹窗

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'dva';
-import {formatMessage, FormattedMessage} from 'umi/locale';
+import {connect} from 'umi';
+import {formatMessage, FormattedMessage} from 'umi';
 import {Alert} from 'antd';
 import Login from '@/components/Login';
 import styles from './Login.less';

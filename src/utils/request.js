@@ -1,6 +1,6 @@
 import fetch from 'dva/fetch';
 import {notification} from 'antd';
-import router from 'umi/router';
+import {history} from 'umi';
 import hash from 'hash.js';
 import {isAntdPro} from './utils';
 import {stringify} from 'qs';
@@ -216,21 +216,21 @@ export default function request(url, option) {
                             type: 'login/logout',
                         });
                     } else {
-                        router.push('/bpmn/processManage');
+                        history.push('/bpmn/processManage');
                     }
                     return;
                 }
                 // environment should not be used
                 if (status === 403) {
-                    router.push('/exception/403');
+                    history.push('/exception/403');
                     return;
                 }
                 if (status <= 504 && status >= 500) {
-                    router.push('/exception/500');
+                    history.push('/exception/500');
                     return;
                 }
                 if (status >= 404 && status < 422) {
-                    router.push('/exception/404');
+                    history.push('/exception/404');
                 }
             })
     );

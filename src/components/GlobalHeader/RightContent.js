@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {FormattedMessage} from 'umi/locale';
+import {FormattedMessage} from 'umi';
 import {Spin, Menu, Icon, Avatar} from 'antd';
 import HeaderDropdown from '../HeaderDropdown';
 import styles from './index.less';

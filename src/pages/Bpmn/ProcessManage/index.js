@@ -6,8 +6,8 @@
  * @Description: 基础设置 -> 流程管理
  */
 import React, {PureComponent} from 'react';
-import {connect} from 'dva';
-import router from 'umi/router';
+import {connect} from 'umi';
+import {history} from 'umi';
 import classNames from 'classnames';
 import {Card, List, Avatar, Button, notification, Popconfirm} from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
@@ -68,7 +68,7 @@ class ProcessManage extends PureComponent {
 
     // 流程设计
     handleProcess = processId => {
-        router.push(`/bpmn/processManage/edit/${processId}`);
+        history.push(`/bpmn/processManage/edit/${processId}`);
     };
 
     // 复制流程

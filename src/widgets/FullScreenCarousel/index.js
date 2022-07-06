@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-12-17 19:08:47
  */
 import React, {PureComponent} from 'react';
-// import {connect} from 'dva';
+// import {connect} from 'umi';
 import {Modal, Icon, Carousel, Button} from 'antd';
 import styles from './index.less';
 

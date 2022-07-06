@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react';
 import DocumentTitle from 'react-document-title';
 import {ContainerQuery} from 'react-container-query';
-import {connect} from 'dva';
+import {connect} from 'umi';
 import classNames from 'classnames';
 import Media from 'react-media';
 import {Layout, ConfigProvider} from 'antd';

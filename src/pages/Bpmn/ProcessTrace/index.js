@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'dva';
-import router from 'umi/router';
+import {connect} from 'umi';
+import {history} from 'umi';
 import {Card, Button} from 'antd';
 import Bpmn from './Bpmn'; // 流程跟踪图
 import Table from './Table'; // 流程跟踪列表
@@ -77,7 +77,7 @@ class ProcessTrace extends Component {
 
     // 返回上一步
     handleBack = () => {
-        router.goBack();
+        history.goBack();
     };
 
     render() {

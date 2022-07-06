@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
-import {connect} from 'dva';
-import Link from 'umi/link';
+import {connect} from 'umi';
+import {Link} from 'umi';
 import {Icon, Row, Col} from 'antd';
 
 import GlobalFooter from '@/components/GlobalFooter';

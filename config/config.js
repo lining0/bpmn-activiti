@@ -49,26 +49,41 @@ const plugins = [
 
 // 针对 preview.pro.ant.design 的 GA 统计代码
 // 业务上不需要这个
-if (APP_TYPE === 'site') {
-    plugins.push([
-        'umi-plugin-ga',
-        {
-            code: 'UA-72788897-6',
-        },
-    ]);
-}
+// if (APP_TYPE === 'site') {
+//     plugins.push([
+//         'umi-plugin-ga',
+//         {
+//             code: 'UA-72788897-6',
+//         },
+//     ]);
+// }
 
 export default {
     // add for transfer to umi
-    plugins,
+    // plugins,
+    antd: {},
+    dva: {
+        hmr: true,
+    },
+    locale: {
+        // default zh-CN
+        default: 'zh-CN',
+        antd: true,
+        // default true, when it is true, will use `navigator.language` overwrite default
+        baseNavigator: true,
+    },
+    // dynamicImport: {
+    //     loadingComponent: './components/PageLoading/index',
+    //     webpackChunkName: true,
+    //     level: 3,
+    // },
     define: {
         APP_TYPE: APP_TYPE || '',
         // 'process.env.apiUrl': 'http://192.168.1.154:5077', // 联调环境
         // 'process.env.apiUrl': 'http://192.168.0.24:5014',
         'process.env.apiUrl': 'http://localhost:8000',
     },
-    treeShaking: true,
-    history: 'hash', // 默认是 browser
+    history: {type: 'hash'}, // 默认是 browser
     targets: {
         ie: 11,
     },
@@ -87,32 +102,6 @@ export default {
     //   },
     // },
     ignoreMomentLocale: true,
-    lessLoaderOptions: {
-        javascriptEnabled: true,
-    },
-    disableRedirectHoist: true,
-    cssLoaderOptions: {
-        modules: true,
-        getLocalIdent: (context, localIdentName, localName) => {
-            if (
-                context.resourcePath.includes('node_modules') ||
-                context.resourcePath.includes('ant.design.pro.less') ||
-                context.resourcePath.includes('global.less')
-            ) {
-                return localName;
-            }
-            const match = context.resourcePath.match(/src(.*)/);
-            if (match && match[1]) {
-                const antdProPath = match[1].replace('.less', '');
-                const arr = slash(antdProPath)
-                    .split('/')
-                    .map(a => a.replace(/([A-Z])/g, '-$1'))
-                    .map(a => a.toLowerCase());
-                return `bpmn_activiti${arr.join('-')}-${localName}`.replace(/--/g, '-');
-            }
-            return localName;
-        },
-    },
     manifest: {
         basePath: '/',
     },

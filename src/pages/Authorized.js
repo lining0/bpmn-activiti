@@ -1,7 +1,7 @@
 import React from 'react';
 import Redirect from 'umi/redirect';
 import pathToRegexp from 'path-to-regexp';
-import {connect} from 'dva';
+import {connect} from 'umi';
 import Authorized from '@/utils/Authorized';
 
 function AuthComponent({children, location, routerData, status}) {
